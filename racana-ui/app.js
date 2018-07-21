@@ -6,11 +6,8 @@ const express = require('express')
 const app = express()
 const path = require("path")
 
-app.use(express.static(path.join(__dirname, 'dist')))
-app.set('views', path.join(__dirname, 'views'))
-app.set('view engine', 'jsx')
-app.engine('jsx', require('express-react-views').createEngine())
+app.use('/public', express.static(path.join(__dirname, 'dist')))
 
-app.get('*', (req, res) => res.render('/dist/login'))
+app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'dist/index.html')))
 
 server.init(app)
