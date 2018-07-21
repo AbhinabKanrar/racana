@@ -8,6 +8,6 @@ const path = require("path")
 
 app.use('/public', express.static(path.join(__dirname, 'dist')))
 
-app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'dist/index.html')))
+app.get('*', require('./src/config/auth'), (req, res) => res.sendFile(path.resolve(__dirname, 'dist/index.html')))
 
 server.init(app)

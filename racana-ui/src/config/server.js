@@ -1,3 +1,5 @@
+"use strict"
+
 var ENV = process.env.NODE_ENV || 'dev',
     PORT = process.env.PORT || 8080,
     CPUS = require('os').cpus().length
