@@ -1,7 +1,7 @@
 "use strict"
 
 var ENV = process.env.NODE_ENV || 'dev',
-    PORT = process.env.PORT || 8080,
+    PORT = process.env.PORT || 8081,
     CPUS = require('os').cpus().length
 
 const cluster = require('cluster')
