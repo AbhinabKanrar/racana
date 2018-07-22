@@ -4,12 +4,13 @@
   "description": "ui for racana",
   "main": "app.js",
   "scripts": {
-    "start": "app.js"
+    "start": "babel-node --presets es2015 app.js"
   },
   "author": "Abhinab Kanrar",
   "license": "ISC",
   "dependencies": {
     "cluster": "^0.7.7",
+    "create-react-class": "^15.6.3",
     "express": "^4.16.3",
     "express-react-views": "^0.10.5",
     "os": "^0.1.1",
@@ -18,10 +19,17 @@
     "react-router-dom": "^4.3.1"
   },
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
     "gulp": "^4.0.0",
     "gulp-clean-css": "^3.9.4",
     "gulp-htmlmin": "^4.0.0",
     "gulp-uglify": "^3.0.0",
-    "pump": "^3.0.0"
+    "pump": "^3.0.0",
+    "webpack": "^4.16.1",
+    "webpack-node-externals": "^1.7.2"
   }
 }
