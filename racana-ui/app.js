@@ -16,7 +16,7 @@ template.init(app)
 
 
 app.get('*', (req, res) => {
-    const content = require('react-dom/server').renderToString(require('./views/index'))
+    const content = require('react-dom/server').renderToNodeStream(require('./views/index'))
     res.setHeader('Content-Type', 'text/html')
     res.send(`
         <!DOCTYPE html>
@@ -36,10 +36,12 @@ app.get('*', (req, res) => {
             <noscript>
                 You need to enable JavaScript to run this app.
             </noscript>
-            <div id="app">${content}</div>
+            <div id="racana">${content}</div>
         </body>
         </html>
     `)
 })
+
+{/* <script type="text/jsx" src="/public/scripts/bundle.js" type="module"></script> */}
 
 server.init(app)
